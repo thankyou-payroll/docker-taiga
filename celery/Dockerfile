@@ -69,5 +69,4 @@ RUN mkdir /taiga_backend/media && mkdir /taiga_backend/static-root \
 
 USER taiga
 
-ENTRYPOINT ["/scripts/entrypoint.sh"]
-CMD ["gunicorn", "--worker-class", "gevent", "--workers", "4", "-b", "0.0.0.0:8000", "taiga.wsgi"]
+CMD ["celery", "-A", "taiga", "worker", "-P", "gevent", "-c", "4", "--loglevel", "info"]

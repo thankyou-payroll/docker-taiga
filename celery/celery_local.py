@@ -15,4 +15,5 @@ broker_url = 'amqp://{}:{}@rabbitmq:5672/{}'.format(
     RABBITMQ_DEFAULT_USER, RABBITMQ_DEFAULT_PASS, RABBITMQ_DEFAULT_VHOST)
 result_backend = 'redis://redis:6379/0'
 
+
 print("Setup celery_local.py finished")
