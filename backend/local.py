@@ -63,6 +63,7 @@ EVENTS_PUSH_BACKEND_OPTIONS = {"url": BROKER_URL}
 # see celery_local.py
 CELERY_ENABLED = env('CELERY_ENABLED', cast=bool, default=False)
 
+DEFAULT_FROM_EMAIL=env('DEFAULT_FROM_EMAIL', default='john@doe.com')
 # Mail settings
 if env('USE_ANYMAIL', cast=bool, default=False):
     INSTALLED_APPS += ['anymail']
